@@ -1,0 +1,138 @@
+.quizTable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    height: 65vh;
+    color: white;
+    font-family: fantasy;
+    letter-spacing: 2px;
+}
+.quizQuestion{
+    font-size: 45px;
+    padding-top: 5vh;
+    text-align: center;
+}
+.quizAnswers{
+    display: flex;
+    padding: 5vh;
+    flex-wrap: wrap;
+    height: 42vh;
+    width: 100%;
+    margin-top: 10vh;
+    background-color: azure;
+    border-radius: 20px;
+}
+.quizAnswerFrame{
+    width: 44%;
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    color: red;
+    border-radius: 20px;
+}
+.quizAnswerFrame:hover{
+    width: 46%;
+    background-color: rgb(218, 250, 250);
+}
+.wrongAnswerMsg{
+    background-color: red;
+    opacity: 0.5;
+}
+.correctAnswerMsg{
+    background-color: green;
+    opacity: 0.5;
+}
+.mainFrame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.startMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuImg{
+    height: 55vh;
+    margin-top: -50px;
+}
+.timer{
+    position: absolute;
+    color: red;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+}
+.timerTick{
+    position: absolute;
+    color: red;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+    animation-name: blinkingTimer;
+    animation-duration: 1s;
+    animation-iteration-count: 10;
+    animation-timing-function: ease-out;
+}
+@keyframes blinkingTimer {
+    0% {
+        font-size: 20px;
+    }
+    100% {
+        font-size: 30px;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.nameInput, .category, .startBtn{
+    font-size: 17px;
+    font-family: fantasy;
+    border-radius: 8px;
+    padding: 7px;
+    background-color: black;
+    color: white;
+    border-color: white;
+    margin-bottom: 1vh;
+}
+.nameInput{
+    width: 17.9vw;
+    height: 3.5vh;
+}
+.category, .startBtn{
+    width: 18.8vw;
+    height: 5vh;
+}
+.bottomButtons{
+    margin-left: 18.6vw;
+}
+.quitBtn, .nextBtn{
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-family: fantasy;
+    height: 4vh;
+    line-height: 0;
+    padding: 10px;
+    width: 5vw;
+    margin: 5px;
+}
+.quitBtn:hover, .nextBtn:hover{
+    padding: 22px;
+    background-color: rgb(255, 22, 22);
+    opacity: 0.8;
+}
+.gameOverMsg{
+    color: red;
+    font-family: fantasy;
+    font-size: 45px;
+    margin-top: 30vh;
+    text-align: center;
+}
