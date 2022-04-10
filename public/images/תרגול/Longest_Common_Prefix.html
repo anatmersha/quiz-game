@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // A Function to find the string having the minimum length 
+
+    function findMinLength(arr) {
+        let min = arr[0].length;
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i].length < min) {
+                min = arr[i].length;
+            }
+        }
+        return (min);
+    }
+    // A Function that returns the longest common prefix
+    // from the array of strings
+
+    function commonPrefix(arr) {
+        let minlen = findMinLength(arr);
+        let result = "";
+        let current; 
+        for (let i = 0; i < minlen; i++) {
+    // Current character (must be same in all strings to be a part of result)
+            current = arr[0][i];
+            for (let j = 1; j < arr.length; j++) {
+                if (arr[j][i] != current) {
+                    return result;
+                }
+            }
+            // Append to result
+            result += (current);
+    }
+        return (result);
+    }
+     
+    let array=["geeksforgeeks", "geeks", "geek", "geezer"]
+     console.log(commonPrefix(array));
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // push each letter to stack than pop()
+
+        // best case 
+        function reverseString(str){
+        let start = 0;
+        let end = str.length-1;
+            while(start<=end){
+                [str[start],str[end]] = [str[end],str[start]]
+                start++;
+                end--;
+            }            
+        return str
+        }
+        const text = ["h","e","l","l","o"]
+        console.log(reverseString(text)); 
+
+        // built in reverse()
+        console.log(text.reverse()); 
+    </script>
+</body>
+</html>

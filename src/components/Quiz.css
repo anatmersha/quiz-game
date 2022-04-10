@@ -1,9 +1,30 @@
+.category{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.categoryBtn{
+    color: white;
+    border-color: transparent;
+    width: 17%;
+    height: 24vh;
+    font-size: 22px;
+    font-family: system-ui;
+    letter-spacing: 1px;
+    margin: 5px;
+    text-align: center;
+}
+.categoryTitle{
+    margin: 0;
+}
 .quizTable{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50vw;
-    height: 65vh;
+    width: 70vw;
+    height: 75vh;
     color: white;
     font-family: fantasy;
     letter-spacing: 2px;
@@ -15,24 +36,27 @@
 }
 .quizAnswers{
     display: flex;
-    padding: 5vh;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    height: 42vh;
-    width: 100%;
+    height: 40vh;
     margin-top: 10vh;
     background-color: azure;
     border-radius: 20px;
 }
 .quizAnswerFrame{
-    width: 44%;
+    width: 40%;
+    height: 8vh;
+    line-height: 3.5;
     text-align: center;
     margin: 20px;
+    margin-top: 4vh;
     font-size: 30px;
     color: red;
     border-radius: 20px;
 }
 .quizAnswerFrame:hover{
-    width: 46%;
+    width: 42%;
     background-color: rgb(218, 250, 250);
 }
 .wrongAnswerMsg{
@@ -79,6 +103,27 @@
     animation-iteration-count: 10;
     animation-timing-function: ease-out;
 }
+.timeRanOutMsg{
+    color: red;
+}
+.helpOptions{
+    margin-top: 10vh;
+}
+.helpBtn{
+    font-size: 45px;
+    position: absolute;
+    top: 19vh;
+    right: -20vw;
+    background-color: transparent;
+    border-color: transparent;
+}
+.questionsAmount{
+    font-size: 25px;
+    position: absolute;
+    top: 18.5vh;
+    left: -20vw;
+    color: black;
+}
 @keyframes blinkingTimer {
     0% {
         font-size: 20px;
@@ -91,8 +136,8 @@ form{
     display: flex;
     flex-direction: column;
 }
-.nameInput, .category, .startBtn{
-    font-size: 17px;
+.nameInput, .levelInput, .startBtn, .categoryInput{
+    font-size: 35px;
     font-family: fantasy;
     border-radius: 8px;
     padding: 7px;
@@ -102,15 +147,15 @@ form{
     margin-bottom: 1vh;
 }
 .nameInput{
-    width: 17.9vw;
+    width: 18.1vw;
     height: 3.5vh;
 }
-.category, .startBtn{
+.levelInput, .startBtn, .categoryInput{
     width: 18.8vw;
     height: 5vh;
 }
 .bottomButtons{
-    margin-left: 18.6vw;
+    margin-left: 0.6vw;
 }
 .quitBtn, .nextBtn{
     background-color: red;
@@ -135,4 +180,70 @@ form{
     font-size: 45px;
     margin-top: 30vh;
     text-align: center;
+}
+@media screen and (max-width: 1024px) {
+    .quizQuestion{
+        font-size: 28px;
+    }
+    .quizAnswerFrame{
+        width: 40%;
+        font-size: 20px;
+    }
+    .quitBtn, .nextBtn{
+        font-size: 20px;
+    }
+    .quitBtn, .nextBtn:hover{
+        padding: 8px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nameInput{
+        width: 18.6vw
+    }
+    .levelInput, .startBtn, .categoryInput{
+        width: 20.8vw;
+    }
+    .quizQuestion{
+        font-size: 20px;
+        width: 38%;
+    }
+    .quitBtn, .nextBtn{
+        font-size: 17px;
+        width: 6vw;
+    }
+}
+@media screen and (max-width: 425px) {
+    .menuImg{
+        height: 32vh;
+    }
+    .nameInput, .levelInput, .startBtn{
+        font-size: 10px;
+    }
+    .nameInput{
+        height: 1.5vh;
+    }
+    .levelInput, .startBtn, .categoryInput {
+        width: 22.8vw;
+        height: 3.3vh;
+    }
+    .quizQuestion{
+        font-size: 12px;
+        width: 100%;
+    }
+    .quizAnswerFrame{
+        width: 30%;
+        font-size: 14px;
+        width: 90%;
+    }
+    .quizAnswerFrame:hover{
+        width: 95%;
+    }
+    .quitBtn, .nextBtn{
+        height: 2.5vh;
+        width: 10vw;
+        font-size: 14px;
+    }
+    .bottomButtons {
+        margin-left: 13.6vw;
+    }
 }

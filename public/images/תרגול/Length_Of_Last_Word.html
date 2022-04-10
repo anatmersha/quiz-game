@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Approach 1: Iterate String from index 0
+        function lengthOfLastWord(str) {
+            let len=0;
+            x=str.trim();
+
+            for(let i=0; i<x.length; i++){
+                if(x[i] == " "){
+                    len=0;
+                }else{
+                    len++;
+                }
+            }
+            return len;
+        }
+        const input="  ggg ggg ggg ggggg  "
+        console.log(lengthOfLastWord(input)); 
+
+        // ??? Approach 2: Iterate the string from the last index.
+        
+        // Approach 2: Using split() method.
+        let message = 'I am a Happy Go lucky Guy';
+        let arr = message.split(' ');
+        console.log(arr[arr.length-1].length); 
+
+    </script>
+</body>
+</html>
