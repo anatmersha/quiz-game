@@ -139,7 +139,7 @@ const Quiz = () => {
         {!startBtn && !categoryScreen ? 
         <div className="startMenu">
             <h1>Quiz Game</h1>
-            <img className="menuImg" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Factionministries.net%2Fwp-content%2Fuploads%2FTN-LG1.png&f=1&nofb=1" alt=""/>
+            <img className="menuImg" src="/images/trivia.gif" alt=""/>
 
             <form onSubmit={(e)=> {
                 e.preventDefault()
@@ -172,7 +172,7 @@ const Quiz = () => {
                 setCategoryScreen(false)
                 setStartBtn(true)
             }}><h2 className="categoryTitle">all</h2><br/>
-            <img width="300px"  src="/images/quiz.png" alt=""/>
+            <img width="150px"  src="/images/quiz.png" alt=""/>
             </div>
             {categories?.map((category, i)=> {
             const chosenCategory = categorySearchNum?.find(item => item.category === category);
@@ -190,7 +190,7 @@ const Quiz = () => {
                     console.log(chosenCategory.value);
             }}>
                 <h2 className="categoryTitle">{category}</h2><br/>
-                <img width="300px" src={`/images/${cleanCategory}.png`} alt=""/>
+                <img width="150px" src={`/images/${cleanCategory}.png`} alt=""/>
                 </div>
             </>)
             })}
@@ -222,7 +222,7 @@ const Quiz = () => {
                     <div className="helpOptions">
 
                         {filteredQuestions[current]?.answers?.length > 2 && fiftyLifelineDone ?
-                        <button onClick={()=> {
+                        <button className="helpOptionsBtns" onClick={()=> {
                             const myOptions = filteredQuestions[current].answers;
                             let correctAnswer;
                             let i = 0;
@@ -244,7 +244,7 @@ const Quiz = () => {
                             console.log(removedAnswers);
                         }}>50/50</button> : ""}
 
-                        {timeLifelineDone ? <button 
+                        {timeLifelineDone ? <button  className="helpOptionsBtns" 
                         onClick={()=> {
                             setCountDownSec(countDownSec + 30)
                             setTimeLifelineDone(false)
@@ -252,7 +252,7 @@ const Quiz = () => {
                         >+30s</button>: ""} 
 
                         {switchLifelineDone ? 
-                        <button onClick={()=> { 
+                        <button  className="helpOptionsBtns" onClick={()=> { 
                             filteredQuestions[current] = filteredQuestions[10];
                             setTimerTick(false)
                             setStopCountDown(false)
