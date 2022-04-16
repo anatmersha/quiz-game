@@ -208,21 +208,19 @@ const Quiz = () => {
 
                 <hr/>
 
-                <div style={{position: 'relative'}}>
-                <img src={images[current]?.contentUrl} alt="" width="15vw"/>
-                    
-                    <p className={timerTick ? "timerTick" : "timer"}>{minutes}:{seconds}</p><br/>
-                    {!stopCountDown && disable ? <h3 className="timeRanOutMsg">You're out of time!</h3> : ""} <br/>
+                <div>
+                <img className="questionImg" src={images[current]?.contentUrl} alt=""/>
+                </div>
 
-                    
+                <div className="quizAnswers"> 
                     <h3 className="questionsAmount">Question {current + 1}/{filteredQuestions.length - 1}</h3>
-                    <button  className="helpBtn" onClick={()=> setShowHelp(true)}><HiOutlineLightBulb/></button><br/>
-                    
+                    <button  className="helpBtn" onClick={()=> setShowHelp(!showHelp)}><HiOutlineLightBulb/></button><br/>
                     {showHelp ? 
                     <div className="helpOptions">
 
                         {filteredQuestions[current]?.answers?.length > 2 && fiftyLifelineDone ?
                         <button className="helpOptionsBtns" onClick={()=> {
+                            setShowHelp(!showHelp)
                             const myOptions = filteredQuestions[current].answers;
                             let correctAnswer;
                             let i = 0;
@@ -246,6 +244,7 @@ const Quiz = () => {
 
                         {timeLifelineDone ? <button  className="helpOptionsBtns" 
                         onClick={()=> {
+                            setShowHelp(!showHelp)
                             setCountDownSec(countDownSec + 30)
                             setTimeLifelineDone(false)
                         }}
@@ -253,6 +252,7 @@ const Quiz = () => {
 
                         {switchLifelineDone ? 
                         <button  className="helpOptionsBtns" onClick={()=> { 
+                            setShowHelp(!showHelp)
                             filteredQuestions[current] = filteredQuestions[10];
                             setTimerTick(false)
                             setStopCountDown(false)
@@ -262,7 +262,7 @@ const Quiz = () => {
                             if(current !== filteredQuestions.length - 2) { 
                                 setCountDownMin(1)
                                 setCountDownSec(0)
-                                setCurrent(current + 1)
+                                setCurrent(current)
                                 setClicked(null)
                             } else { 
                                 appendToHistory(userName, level, (timeScore / 60).toPrecision(2), `${answeredCorrectly}/${filteredQuestions.length - 1}`, filteredQuestions[current].category)
@@ -274,8 +274,9 @@ const Quiz = () => {
 
                     </div>              
                     : ""}
-                </div>
-                <div className="quizAnswers"> 
+                <p className={timerTick ? "timerTick" : "timer"}>{minutes}:{seconds}</p><br/>
+                {!stopCountDown && disable ? <h3 className="timeRanOutMsg">You're out of time!</h3> : ""} <br/>
+
                     {filteredQuestions[current]?.answers?.map((answer, i)=> { 
                         const letters = ["A", "B", "C", "D"]; 
                         const answerBgColor = clicked === i ? "green" : (clicked === answer ? "red" : ""); 
@@ -347,7 +348,7 @@ const Quiz = () => {
                         <p key={i}>{i + 1}. {score.name}: {score.correct} correct, level: {score.level}, category: {score.category} time: {score.time} minutes</p>
                     )): ""}
                 </div>
-            </div>             
+        </div>             
         </>}
         </div>
     )

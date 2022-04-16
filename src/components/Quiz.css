@@ -24,22 +24,28 @@
     flex-direction: column;
     align-items: center;
     width: 70vw;
-    height: 75vh;
     color: white;
     font-family: fantasy;
     letter-spacing: 2px;
 }
 .quizQuestion{
-    font-size: 27px;
+    font-size: 35px;
     padding-top: 5vh;
     text-align: center;
 }
+.questionImg{
+    width: 10vw;
+    height: 15vh;
+    margin-top: 2vh;
+}
 .quizAnswers{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 40vh;
+    height: 50vh;
+    width: 50vw;
     margin-top: 10vh;
     background-color: azure;
     border-radius: 20px;
@@ -49,8 +55,9 @@
     color: red;
     font-size: 22px;
     height: 6vh;
-    line-height: 2.5;
-    margin: 6vh 17px 17px;
+    line-height: 3.5;
+    margin: 1vh 17px;
+    margin-top: 8vh;
     text-align: center;
     width: 40%;
 }
@@ -84,18 +91,20 @@
 }
 .timer{
     position: absolute;
+    top: 0;
     color: red;
     font-family: fantasy;
     letter-spacing: 2px;
-    font-size: 18px;
+    font-size: 30px;
     text-align: center;
 }
 .timerTick{
     position: absolute;
+    top: -0.5vh;
     color: red;
     font-family: fantasy;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     animation-name: blinkingTimer;
     animation-duration: 1s;
@@ -103,45 +112,53 @@
     animation-timing-function: ease-out;
 }
 .timeRanOutMsg{
-    color: red;
+    position: absolute;
+    color: black;
+    top: 10vh;
+    left: 13vw;
+    font-size: 53px;
+    background-color: red;
+    padding: 4vw;
 }
 .helpOptions{
     position: absolute;
-    top: 23vh;
-    width: 25vw;
-    left: 17vw;
+    top: 2.2vh;
+    right: 2.8vw;
     z-index: 99;
+    font-family: fantasy;
 }
 .helpOptionsBtns{
     background-color: azure;
-    border-color: azure;
+    border: none;
     padding: 3px;
-    margin-right: 8px;
+    margin: 6px;
+    font-size: 22px;
+    font-family: fantasy;
 }
 .helpBtn{
     background-color: azure;
     border-color: transparent;
-    font-size: 30px;
+    font-size: 40px;
     position: absolute;
-    right: -22vw;
-    top: 23vh;
     z-index: 99;
+    right: 1vw;
+    top: 2vh;
 }
 .questionsAmount{
     color: #000;
-    font-size: 18px;
-    left: -20vw;
+    font-size: 21px;
+    left: 2vw;
     position: absolute;
-    top: 22vh;
+    top: 1.4vh;
     background-color: azure;
     z-index: 99;
 }
 @keyframes blinkingTimer {
     0% {
-        font-size: 20px;
+        font-size: 30px;
     }
     100% {
-        font-size: 30px;
+        font-size: 35px;
     }
 }
 form{
